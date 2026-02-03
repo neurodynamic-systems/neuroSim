@@ -55,3 +55,49 @@ def HH_derivative_Equations(state, I_ext):
     return np.array([dVdt, dmdt, dhdt, dndt])
 
 
+def rk4_step(state, dt, I_ext):
+    k1 = HH_derivative_Equations(state, I_ext)
+    k2 = HH_derivative_Equations(state + 0.5*dt*k1, I_ext)
+    k3 = HH_derivative_Equations(state + 0.5*dt*k2, I_ext)
+    k4 = HH_derivative_Equations(state + dt*k3, I_ext)
+
+    return state + (dt/6)*(k1 + 2*k2 + 2*k3 + k4)
+
+def simulate_HH():
+    dt = 0.01     # ms
+    tmax = 50.0   # ms
+    steps = int(tmax/dt)
+
+    # Initial membrane potential
+    V0 = -65.0
+
+    # Initial gating variables at steady-state
+    m0 = alpha_m(V0)/(alpha_m(V0)+beta_m(V0))
+    h0 = alpha_h(V0)/(alpha_h(V0)+beta_h(V0))
+    n0 = alpha_n(V0)/(alpha_n(V0)+beta_n(V0))
+
+    state = np.array([V0, m0, h0, n0])
+
+    # External current
+    I_ext = 10.0   # uA/cm^2
+
+    trajectory = np.zeros((steps, 4))
+
+    for i in range(steps):
+        state = rk4_step(state, dt, I_ext)
+        trajectory[i] = state
+
+    # =========================
+    # Plot membrane potential
+    # =========================
+    time = np.arange(steps)*dt
+
+    plt.plot(time, trajectory[:,0])
+    plt.xlabel("Time (ms)")
+    plt.ylabel("Membrane potential (mV)")
+    plt.title("Single Hodgkin–Huxley neuron (Python)")
+    plt.savefig("../../assets/simple_hh.png", dpi=300, bbox_inches="tight")
+    plt.show()
+
+if __name__ == "__main__":
+    simulate_HH()

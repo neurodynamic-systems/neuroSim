@@ -144,12 +144,42 @@ $$
 - $\ m_\infty(V_i)$ — Steady-state activation value
 - $\ \tau_m(V_i)$ — Voltage-dependent time constant for $m_i$
 
+**Rate Constants:**
+
+$$
+\alpha_m(V) = \frac{0.1(V + 40)}{1 - \exp\left(-\frac{V + 40}{10}\right)}
+$$
+
+$$
+\beta_m(V) = 4\exp\left(-\frac{V + 65}{18}\right)
+$$
+
+where:
+$$
+m_\infty(V) = \frac{\alpha_m(V)}{\alpha_m(V) + \beta_m(V)}, \quad \tau_m(V) = \frac{1}{\alpha_m(V) + \beta_m(V)}
+$$
+
 $$
 \frac{dh_i}{dt} = \frac{h_\infty(V_i) - h_i}{\tau_h(V_i)}
 $$
 
 - $ h_\infty(V_i) $ — Steady-state inactivation value
 - $\tau_h(V_i)$ — Voltage-dependent time constant for $h_i$
+
+**Rate Constants:**
+
+$$
+\alpha_h(V) = 0.07\exp\left(-\frac{V + 65}{20}\right)
+$$
+
+$$
+\beta_h(V) = \frac{1}{1 + \exp\left(-\frac{V + 35}{10}\right)}
+$$
+
+where:
+$$
+h_\infty(V) = \frac{\alpha_h(V)}{\alpha_h(V) + \beta_h(V)}, \quad \tau_h(V) = \frac{1}{\alpha_h(V) + \beta_h(V)}
+$$
 
 ---
 
@@ -171,6 +201,21 @@ $$
 
 - $n_\infty(V_i)$— Steady-state potassium activation
 - $\tau_n(V_i)$— Voltage-dependent time constant for $n_i$
+
+**Rate Constants:**
+
+$$
+\alpha_n(V) = \frac{0.01(V + 55)}{1 - \exp\left(-\frac{V + 55}{10}\right)}
+$$
+
+$$
+\beta_n(V) = 0.125\exp\left(-\frac{V + 65}{80}\right)
+$$
+
+where:
+$$
+n_\infty(V) = \frac{\alpha_n(V)}{\alpha_n(V) + \beta_n(V)}, \quad \tau_n(V) = \frac{1}{\alpha_n(V) + \beta_n(V)}
+$$
 
 ---
 
@@ -208,6 +253,21 @@ $$
 - $s_\infty(V_i)$ — Steady-state calcium activation
 - $\tau_s(V_i)$ — Calcium channel time constant
 
+**Rate Constants:**
+
+$$
+\alpha_s(V) = \frac{0.1(V + 20)}{1 - \exp\left(-\frac{V + 20}{10}\right)}
+$$
+
+$$
+\beta_s(V) = 0.5\exp\left(-\frac{V + 45}{80}\right)
+$$
+
+where:
+$$
+s_\infty(V) = \frac{\alpha_s(V)}{\alpha_s(V) + \beta_s(V)}, \quad \tau_s(V) = \frac{1}{\alpha_s(V) + \beta_s(V)}
+$$
+
 ---
 
 ### A-Type Potassium Current
@@ -233,6 +293,36 @@ $$
 - $a_\infty, b_\infty$ — Steady-state gating functions
 - $\tau_a, \tau_b$ — Voltage-dependent time constants
 
+**Rate Constants for Activation (a):**
+
+$$
+\alpha_a(V) = \frac{0.02(V + 13)}{1 - \exp\left(-\frac{V + 13}{10}\right)}
+$$
+
+$$
+\beta_a(V) = 0.0175\exp\left(-\frac{V + 43}{40}\right)
+$$
+
+where:
+$$
+a_\infty(V) = \frac{\alpha_a(V)}{\alpha_a(V) + \beta_a(V)}, \quad \tau_a(V) = \frac{1}{\alpha_a(V) + \beta_a(V)}
+$$
+
+**Rate Constants for Inactivation (b):**
+
+$$
+\alpha_b(V) = 0.0016\exp\left(-\frac{V + 53}{50}\right)
+$$
+
+$$
+\beta_b(V) = \frac{0.05}{1 + \exp\left(-\frac{V + 23}{10}\right)}
+$$
+
+where:
+$$
+b_\infty(V) = \frac{\alpha_b(V)}{\alpha_b(V) + \beta_b(V)}, \quad \tau_b(V) = \frac{1}{\alpha_b(V) + \beta_b(V)}
+$$
+
 ---
 
 ### M-Type Potassium Current
@@ -252,6 +342,21 @@ $$
 
 - $p_\infty(V_i)$ — Steady-state M-channel activation
 - $\tau_p(V_i)$ — Slow activation time constant
+
+**Rate Constants:**
+
+$$
+\alpha_p(V) = \frac{0.0001(V + 30)}{1 - \exp\left(-\frac{V + 30}{9}\right)}
+$$
+
+$$
+\beta_p(V) = -\frac{0.0001(V + 30)}{1 - \exp\left(\frac{V + 30}{9}\right)}
+$$
+
+where:
+$$
+p_\infty(V) = \frac{\alpha_p(V)}{\alpha_p(V) + \beta_p(V)}, \quad \tau_p(V) = \frac{1}{\alpha_p(V) + \beta_p(V)}
+$$
 
 ---
 

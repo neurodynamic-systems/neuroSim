@@ -20,8 +20,7 @@ The neuronal membrane is modeled as a parallel combination of a capacitor and mu
 Applying Kirchhoff’s current law yields
 
 $$
-C_m \frac{dV_i}{dt}
-=
+C_m \frac{dV_i}{dt} =
 I_{\text{ext}}
 - I_{\text{ion}}^{(i)}
 + I_{\text{syn}}^{(i)}
@@ -40,8 +39,7 @@ $I_{\text{coupling}}$ represents electrical coupling with other neurons.
 **For simple HH model the equation becomes**
 
 $$
-C_m \frac{dV_i}{dt}
-=
+C_m \frac{dV_i}{dt} =
 I_{\text{ext}}
 - I_{\text{ion}}^{(i)}
 + I_{\text{coupling}}(V_i, \{V_j\})
@@ -64,8 +62,7 @@ $P_k$ is the probability that the channel is open.
 The total ionic current is expressed as
 
 $$
-I_{\text{ion}}
-=
+I_{\text{ion}} =
 I_{\text{Na}} + I_{\text{K}} + I_{\text{L}}
 + I_{\text{Ca}} + I_{\text{A}} + I_{\text{M}}
 $$
@@ -83,8 +80,7 @@ where:
 **For Simple HH model we conside only Sodium and Potassium**
 
 $$
-I_{\text{ion}}
-=
+I_{\text{ion}} =
 I_{\text{Na}} + I_{\text{K}}
 $$
 
@@ -101,16 +97,14 @@ $$
 Let $x(t)$ denote the open probability of the gate. The dynamics follow
 
 $$
-\frac{dx}{dt}
-=
+\frac{dx}{dt} =
 \alpha_x(V)(1 - x) - \beta_x(V)x
 $$
 
 This can be rewritten as
 
 $$
-\frac{dx}{dt}
-=
+\frac{dx}{dt} =
 \frac{x_\infty(V) - x}{\tau_x(V)}
 $$
 
@@ -376,14 +370,13 @@ $$
 ## Intracellular Calcium Dynamics
 
 $$
-\frac{d[\text{Ca}^{2+}]_i}{dt}
-=
--\alpha I_{\text{Ca}}
--
+\frac{d[\text{Ca}^{2+}]_i}{dt} 
+-\alpha I_{\text{Ca}} -
 \frac{[\text{Ca}^{2+}]_i - [\text{Ca}^{2+}]_{\text{rest}}}{\tau_{\text{Ca}}}
 $$
 
 **Where:**
+
 - $[\text{Ca}^{2+}]_i$ — Intracellular calcium concentration
 - $\alpha$ — Current-to-concentration conversion factor
 - $[\text{Ca}^{2+}]_{\text{rest}}$ — Resting calcium concentration
@@ -396,8 +389,7 @@ $$
 ### Chemical Synapses
 
 $$
-I_{\text{syn}}^{(i)}
-=
+I_{\text{syn}}^{(i)} =
 \sum_j g_{ij} s_{ij} (V_i - E_{\text{syn}})
 $$
 
@@ -408,8 +400,7 @@ $$
 - $E_{\text{syn}}$ — Synaptic reversal potential
 
 $$
-\frac{ds_{ij}}{dt}
-=
+\frac{ds_{ij}}{dt} =
 \alpha_s T_j (1 - s_{ij}) - \beta_s s_{ij}
 $$
 
@@ -422,8 +413,7 @@ $$
 ### Electrical Coupling (Gap Junctions)
 
 $$
-I_{\text{coupling}}
-=
+I_{\text{coupling}} =
 \sum_j g_{ij} (V_j - V_i)
 $$
 
@@ -441,17 +431,14 @@ $$
 \boxed{
 \begin{aligned}
 C_m \frac{dV_i}{dt} &=
-I_{\text{ext}}
-- \sum_k I_k
+I_{\text{ext}} - \sum_k I_k
 + I_{\text{syn}}
 + I_{\text{coupling}}, \\[6pt]
 \frac{dx_i}{dt} &=
 \frac{x_\infty(V_i) - x_i}{\tau_x(V_i)},
 \quad x \in \{m,h,n,s,a,b,p\}, \\[6pt]
 \frac{d[\text{Ca}^{2+}]_i}{dt}
-&=
--\alpha I_{\text{Ca}}
--
+&= -\alpha I_{\text{Ca}} -
 \frac{[\text{Ca}^{2+}]_i - [\text{Ca}^{2+}]_{\text{rest}}}{\tau_{\text{Ca}}}
 \end{aligned}
 }

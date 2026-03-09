@@ -21,10 +21,7 @@ Applying Kirchhoff’s current law yields
 
 $$
 C_m \frac{dV_i}{dt} =
-I_{\text{ext}}
-- I_{\text{ion}}^{(i)}
-+ I_{\text{syn}}^{(i)}
-+ I_{\text{coupling}}(V_i, \{V_j\})
+I_{\text{ext}} - I_{\text{ion}}^{(i)} + I_{\text{syn}}^{(i)} + I_{\text{coupling}}(V_i, \{V_j\})
 $$
 
 where  
@@ -40,9 +37,7 @@ $I_{\text{coupling}}$ represents electrical coupling with other neurons.
 
 $$
 C_m \frac{dV_i}{dt} =
-I_{\text{ext}}
-- I_{\text{ion}}^{(i)}
-+ I_{\text{coupling}}(V_i, \{V_j\})
+I_{\text{ext}} - I_{\text{ion}}^{(i)} + I_{\text{coupling}}(V_i, \{V_j\})
 $$
 
 
@@ -63,8 +58,7 @@ The total ionic current is expressed as
 
 $$
 I_{\text{ion}} =
-I_{\text{Na}} + I_{\text{K}} + I_{\text{L}}
-+ I_{\text{Ca}} + I_{\text{A}} + I_{\text{M}}
+I_{\text{Na}} + I_{\text{K}} + I_{\text{L}} + I_{\text{Ca}} + I_{\text{A}} + I_{\text{M}}
 $$
 
 where:
@@ -431,9 +425,7 @@ $$
 \boxed{
 \begin{aligned}
 C_m \frac{dV_i}{dt} &=
-I_{\text{ext}} - \sum_k I_k
-+ I_{\text{syn}}
-+ I_{\text{coupling}}, \\[6pt]
+I_{\text{ext}} - \sum_k I_k + I_{\text{syn}} + I_{\text{coupling}}, \\[6pt]
 \frac{dx_i}{dt} &=
 \frac{x_\infty(V_i) - x_i}{\tau_x(V_i)},
 \quad x \in \{m,h,n,s,a,b,p\}, \\[6pt]

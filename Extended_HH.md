@@ -29,6 +29,7 @@ I_{\text{ext}}
 $$
 
 where  
+
 $C_m$ is the membrane capacitance,  
 $V_i$ is the membrane potential of neuron $i$,  
 $I_{\text{ext}}$ is the externally applied current,  
@@ -37,6 +38,7 @@ $I_{\text{syn}}$ represents synaptic input,
 $I_{\text{coupling}}$ represents electrical coupling with other neurons.
 
 **For simple HH model the equation becomes**
+
 $$
 C_m \frac{dV_i}{dt}
 =
@@ -79,6 +81,7 @@ where:
 
 
 **For Simple HH model we conside only Sodium and Potassium**
+
 $$
 I_{\text{ion}}
 =
@@ -130,6 +133,7 @@ I_{\text{Na}} = g_{\text{Na}} m_i^3 h_i (V_i - E_{\text{Na}})
 $$
 
 **Where:**
+
 - $I_{Na}$ — Sodium ionic current
 - $g_{Na}$ — Maximum sodium conductance
 - $m_i$ — Sodium activation gating variable
@@ -155,6 +159,7 @@ $$
 $$
 
 where:
+
 $$
 m_\infty(V) = \frac{\alpha_m(V)}{\alpha_m(V) + \beta_m(V)}, \quad \tau_m(V) = \frac{1}{\alpha_m(V) + \beta_m(V)}
 $$
@@ -177,6 +182,7 @@ $$
 $$
 
 where:
+
 $$
 h_\infty(V) = \frac{\alpha_h(V)}{\alpha_h(V) + \beta_h(V)}, \quad \tau_h(V) = \frac{1}{\alpha_h(V) + \beta_h(V)}
 $$
@@ -241,6 +247,7 @@ I_{\text{Ca}} = g_{\text{Ca}} s_i^2 (V_i - E_{\text{Ca}})
 $$
 
 **Where:**
+
 - $I_{\text{Ca}}$ — Voltage-gated calcium current
 - $g_{\text{Ca}}$ — Maximum calcium conductance
 - $s_i$ — Calcium activation gating variable
@@ -264,6 +271,7 @@ $$
 $$
 
 where:
+
 $$
 s_\infty(V) = \frac{\alpha_s(V)}{\alpha_s(V) + \beta_s(V)}, \quad \tau_s(V) = \frac{1}{\alpha_s(V) + \beta_s(V)}
 $$
@@ -277,6 +285,7 @@ I_{\text{A}} = g_{\text{A}} a_i^3 b_i (V_i - E_{\text{K}})
 $$
 
 **Where:**
+
 - $I_{\text{A}}$ — A-type (transient) potassium current
 - $g_{\text{A}}$ — Maximum A-type conductance
 - $a_i$ — Activation variable
@@ -304,6 +313,7 @@ $$
 $$
 
 where:
+
 $$
 a_\infty(V) = \frac{\alpha_a(V)}{\alpha_a(V) + \beta_a(V)}, \quad \tau_a(V) = \frac{1}{\alpha_a(V) + \beta_a(V)}
 $$
@@ -319,6 +329,7 @@ $$
 $$
 
 where:
+
 $$
 b_\infty(V) = \frac{\alpha_b(V)}{\alpha_b(V) + \beta_b(V)}, \quad \tau_b(V) = \frac{1}{\alpha_b(V) + \beta_b(V)}
 $$
@@ -332,6 +343,7 @@ I_{\text{M}} = g_{\text{M}} p_i (V_i - E_{\text{K}})
 $$
 
 **Where:**
+
 - $I_{\text{M}}$ — M-type (slow, non-inactivating) potassium current
 - $g_{\text{M}}$ — Maximum M-type conductance
 - $p_i$ — M-type activation variable
@@ -354,6 +366,7 @@ $$
 $$
 
 where:
+
 $$
 p_\infty(V) = \frac{\alpha_p(V)}{\alpha_p(V) + \beta_p(V)}, \quad \tau_p(V) = \frac{1}{\alpha_p(V) + \beta_p(V)}
 $$
@@ -415,6 +428,7 @@ I_{\text{coupling}}
 $$
 
 **Where:**
+
 - $I_{\text{coupling}}$ — Electrical coupling current
 - $g_{ij}$ — Gap-junction conductance
 - $V_j$ — Membrane potential of neighboring neuron \( j \)
